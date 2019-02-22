@@ -1,4 +1,4 @@
-FROM quay.io/fenicsproject/stable:latest
+FROM jgoldfar/fenics:base
 LABEL maintainer="Jonathan Goldfarb <jgoldfar@my.fit.edu>"
 USER root
 WORKDIR /home/fenics/shared

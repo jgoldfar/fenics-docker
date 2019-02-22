@@ -1,10 +1,10 @@
 FEnics docker container
 =====
 
-[![Docker Build Status](https://img.shields.io/docker/build/jgoldfar/fenics.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/jgoldfar/fenics.svg)](https://hub.docker.com/r/jgoldfar/fenics/)
+[![Docker Build Status](https://img.shields.io/docker/automated/jgoldfar/fenics.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/jgoldfar/fenics.svg)](https://hub.docker.com/r/jgoldfar/fenics/)
 [![Build Status](https://travis-ci.org/jgoldfar/fenics-docker.svg?branch=master)](https://travis-ci.org/jgoldfar/fenics-docker)
 
-This repository builds containers for FEnics in combination with other codes, and will also hold simple example files to drive a solver.
+This repository builds containers for [FEnics](https://fenicsproject.org/) in combination with other codes, and will also hold simple example files to drive a solver.
 
 Setup
 -----
@@ -38,6 +38,6 @@ Why should I use this container?
 
 ## Container Descriptions
 
-* `jupyter` contains a FEnics installation with jupyter for algorithm development.
+* `base` contains a FEnics installation with additional packages needed for research codes.
 
-* `plain` contains a FEnics installation with additional packages needed for research codes.
+* `jupyter` layers a [jupyter notebook](https://www.jupyter.org) on top of `base` for vizualization and algorithm development.
