@@ -3,4 +3,4 @@ LABEL maintainer="Jonathan Goldfarb <jgoldfar@my.fit.edu>"
 USER root
 WORKDIR /home/fenics/shared
 ENTRYPOINT ["jupyter"]
-CMD ["notebook", "--allow-root"]
+CMD ["notebook", "--ip=0.0.0.0", "--allow-root"]
