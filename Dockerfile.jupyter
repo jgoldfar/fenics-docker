@@ -1,0 +1,6 @@
+FROM quay.io/fenicsproject/stable:latest
+LABEL maintainer="Jonathan Goldfarb <jgoldfar@my.fit.edu>"
+USER root
+WORKDIR /home/fenics/shared
+ENTRYPOINT ["jupyter"]
+CMD ["notebook", "--allow-root"]

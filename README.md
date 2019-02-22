@@ -1,10 +1,10 @@
-Octave docker container
+FEnics docker container
 =====
 
-[![Docker Build Status](https://img.shields.io/docker/build/jgoldfar/octave.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/jgoldfar/octave.svg)](https://hub.docker.com/r/jgoldfar/octave/)
-[![Build Status](https://travis-ci.org/jgoldfar/octave-docker.svg?branch=master)](https://travis-ci.org/jgoldfar/octave-docker)
+[![Docker Build Status](https://img.shields.io/docker/build/jgoldfar/fenics.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/jgoldfar/fenics.svg)](https://hub.docker.com/r/jgoldfar/fenics/)
+[![Build Status](https://travis-ci.org/jgoldfar/fenics-docker.svg?branch=master)](https://travis-ci.org/jgoldfar/fenics-docker)
 
-This repository builds containers for Octave, primarily for the purposes of running continuous integration processes against MATLAB code.
+This repository builds containers for FEnics in combination with other codes, and will also hold simple example files to drive a solver.
 
 Setup
 -----
@@ -17,26 +17,27 @@ sudo usermod -aG docker YOURUSERNAME
 build:
 
 ```shell
-docker build -t jgoldfar/octave .
+docker build -t jgoldfar/fenics:jupyter -f Dockerfile.jupyter . # or Dockerfile.plain
 ```
 
 Usage:
 -----
 
 ```shell
-docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":/data jgoldfar/octave
+docker run --rm --interactive -v "$(pwd)":/home/fenics/shared jgoldfar/fenics:jupyter
 ```
 
-`WORKDIRs` match, mounted to `/data` inside container.
+Your working directory would then be mounted to the working directory inside the container, so you're ready to run any commands you would want.
 
 Why should I use this container?
 
 -----
 
 - Easy setup
+- According to the [FEnics documentation](), docker images can be more performant in some situations.
 
 ## Container Descriptions
 
-* `debian` contains an Octave installation on top of Debian Stretch
+* `jupyter` contains a FEnics installation with jupyter for algorithm development.
 
-* `alpine` contains an Octave installation on top of Alpine Linux Edge
+* `plain` contains a FEnics installation with additional packages needed for research codes.
