@@ -5,8 +5,7 @@ WORKDIR /home/fenics/shared
 
 FROM base as nbconvert
 ENTRYPOINT ["jupyter-nbconvert"]
-CMD ["--help"]
 
 FROM base as jupyter
 ENTRYPOINT ["jupyter-notebook"]
-CMD "--ip=0.0.0.0", "--allow-root"]
+CMD ["--ip=0.0.0.0", "--allow-root"]
