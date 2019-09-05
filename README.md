@@ -32,11 +32,19 @@ docker pull jgoldfar/fenics:jupyter # or :base
 
 ## Usage
 
-All of the examples in [the documentation](https://fenics.readthedocs.io/projects/containers/en/latest/) should run with the image replaced by `jgoldfar/fenics:base`.
+Using Docker is (somewhat) beyond the scope of this readme file; look to the Docker website, or the output of running `docker` at the command line, to see what commands are available.
+We mostly make use of two commands to run examples:
+
+* `docker pull`: Download a new version of a given image from an image repository
+
+* `docker run`: Instantiate an image in a container and run a command inside the container.
+
+
+Since Docker isolates FEniCS and the other pakcages installed in the images from any other system differences, all of the examples in [the documentation](https://fenics.readthedocs.io/projects/containers/en/latest/) should run with the image replaced by `jgoldfar/fenics:base`.
 Below, we record some command line instructions to run particular examples against this image.
 
 *Note*: Running a command with `--rm` after `docker run` will destroy the container after it exits.
-If you want to save any output data, you'll have to move it to a directory mounted as a docker volume, such as `/home/fenics/shared` in the command above.
+If you want to save any output data, you'll have to move it to a directory mounted as a docker volume, such as `/home/fenics/shared` in the command below.
 
 ### Starting Jupyter
 
